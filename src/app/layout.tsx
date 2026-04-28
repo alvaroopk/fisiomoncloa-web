@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import DemoBanner from "@/components/DemoBanner";
+import { SITE_INDEXED } from "@/lib/constants";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -28,6 +30,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
   },
+  robots: {
+    index: SITE_INDEXED,
+    follow: SITE_INDEXED,
+    googleBot: {
+      index: SITE_INDEXED,
+      follow: SITE_INDEXED,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -42,6 +52,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <DemoBanner />
       </body>
     </html>
   );
